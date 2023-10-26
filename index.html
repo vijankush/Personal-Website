@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Ankush Vij • Software Developer 💻</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0' />
+    <link id='favicon' rel='shortcut icon' type='image/png' href='data:image/png;base64,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'>
+    <link href='https://vijankush.netlify.app' rel='canonical'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+      /* -------------------------------------------------------
+       * Variables
+       * ------------------------------------------------------- */
+
+      :root {
+        --transition: 150ms ease-in-out;
+        --avatar-size: 90px;
+        --avatar-circle-size: 90px;
+        --avatar-circle-margin: calc(var(--avatar-size) - var(--avatar-circle-size));
+        --highlight-color: lightskyblue;
+        --avatar-size: 100px;
+        --inlay-shadow: rgba(0,0,0,0.08) 0 2px 4px inset;
+        --standard-border-radius: 4px;
+      }
+      @media only screen and (max-width: 869px) {
+        :root {
+          --section-spacing: 64px;
+          --font-size: 17px;
+          --org-logo-size: 50px;
+          --org-logo-right-margin: 14px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        :root {
+          --section-spacing: 150px;
+          --font-size: 20px;
+          --org-logo-size: 70px;
+          --org-logo-right-margin: 24px;
+        }
+      }
+
+      :root, :root[data-theme-override='light'] {
+        --background-color: #ffffff;
+        --default-text-color: #33333a;
+        --emphasis-text-color: #020203;
+        --subtle-text-color: #757577;
+        --link-underline-color: #88888a;
+        --tag-background-color: #eaeaec;
+        --tag-text-color: #4d4d4e;
+        --mobile-menu-icon-color: #020203;
+        --org-logo-border-color: #eaeaec;
+        --org-logo-background-color: #ffffff;
+      }
+
+      :root[data-theme-override='dark'] {
+        --background-color: #0a0a0b;
+        --default-text-color: #a0a0a0;
+        --emphasis-text-color: #d5d5d5;
+        --subtle-text-color: #7a7a7a;
+        --link-underline-color: #545454;
+        --tag-background-color: #212121;
+        --tag-text-color: #bbbbbb;
+        --mobile-menu-icon-color: #d5d5d5;
+        --org-logo-border-color: #1a1a1b;
+        --org-logo-background-color: #000;
+      }
+
+      /* ---------------------------------------------------------------------------------------
+       *  Globals
+       * --------------------------------------------------------------------------------------- */
+
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        direction: ltr;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+      body {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 400;
+        font-size: var(--font-size);
+        line-height: 1.5em;
+        margin: 0;
+        background-color: var(--background-color);
+        color: var(--default-text-color);
+        transition: background-color var(--transition), color var(--transition);
+      }
+
+      ::selection {
+        color: #020203;
+        background: var(--highlight-color);
+      }
+
+      a {
+        color: inherit;
+        text-decoration-style: dotted;
+        text-underline-position: under;
+        text-underline-offset: 2px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--link-underline-color);
+      }
+
+      a:hover {
+        text-decoration-style: solid;
+        color:  blue;
+      }
+
+      a:focus-visible {
+        outline: var(--highlight-color) solid 2px;
+        outline-offset: 4px;
+        text-decoration: none;
+      }
+
+      /* ---------------------------------------------------------------------------------------
+       *  Components
+       * --------------------------------------------------------------------------------------- */
+
+      @media only screen and (max-width: 869px) {
+        .container {
+          padding: 25px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        .container {
+          padding: var(--section-spacing) 15px 0;
+          max-width: 1140px;
+          margin: 0 auto;
+        }
+      }
+
+      header, section {
+        margin-bottom: var(--section-spacing);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+      }
+      @media only screen and (max-width: 869px) {
+        header {
+          flex-direction: column-reverse;
+        }
+        header .subtitle {
+          display: none;
+        }
+      }
+
+      .avatar-and-name-container {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+      }
+      @media only screen and (max-width: 869px) {
+        .avatar-and-name-container {
+          flex-direction: column;
+        }
+      }
+
+      .avatar-container {
+        width: var(--avatar-circle-size);
+        height: var(--avatar-circle-size);
+        background: radial-gradient(
+          circle at center,
+          var(--highlight-color) 0,
+          var(--highlight-color) calc(var(--avatar-circle-size) / 2.0 - 0.5px),
+          transparent calc(var(--avatar-circle-size) / 2.0)
+        );
+        position: relative;
+        clip-path: path('M 0,-8 L 0,45 A 1,1 0,0,0 90,45 L 90,-8 z');
+        box-shadow: var(--inlay-shadow);
+        border-radius: calc(var(--avatar-circle-size) / 2.0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+      }
+      @media only screen and (max-width: 869px) {
+        .avatar-container {
+          margin-bottom: 10px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        .avatar-container {
+          margin-right: 20px;
+        }
+      }
+
+      .avatar-image {
+        position: absolute;
+        bottom: 1;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        left: calc(var(--avatar-circle-margin) / -2.0);
+      }
+
+      h1 {
+        font-weight: 500;
+        margin: 0;
+        color: var(--emphasis-text-color);
+        transition: color var(--transition);
+      }
+      @media only screen and (max-width: 869px) {
+        h1 {
+          font-size: 20px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        h1 {
+          font-size: 24px;
+        }
+      }
+
+      .subtitle {
+        color: var(--subtle-text-color);
+        transition: color var(--transition);
+      }
+
+      nav {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      @media only screen and (max-width: 869px) {
+        nav {
+          justify-content: space-between;
+          width: 100%;
+          margin-bottom: 32px;
+          flex-wrap: wrap;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        nav {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .mobile-menu-switch {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        height: 18px;
+        width: 18px;
+        flex-shrink: 0;
+      }
+      .mobile-menu-switch:before, .mobile-menu-switch:after {
+        content: '';
+        height: 0px;
+        border-top: solid 2px var(--mobile-menu-icon-color);
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: transform var(--transition);
+      }
+      .mobile-menu-switch:before {
+        top: 6px;
+      }
+      .mobile-menu-switch:after {
+        top: 12px;
+      }
+      .mobile-menu-switch:checked:before {
+        transform: translate3d(0, 2px, 0) rotate3d(0, 0, 1, -45deg);
+      }
+      .mobile-menu-switch:checked:after {
+        transform: translate3d(0, -4px, 0) rotate3d(0, 0, 1, 45deg);
+      }
+
+      @media only screen and (max-width: 869px) {
+        .mobile-menu-switch:not(:checked) ~ ul {
+          max-height: 0px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        .mobile-menu-switch {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 869px) {
+        nav ul {
+          width: 100%;
+          max-height: 170px;
+          transition: max-height var(--transition);
+          overflow: hidden;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        nav ul {
+          display: flex;
+        }
+      }
+
+      @media only screen and (max-width: 869px) {
+        nav a {
+          display: block;
+          padding: 6px 0;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        nav a {
+          padding: 8px 16px;
+        }
+        nav a:focus-visible {
+          outline-offset: -8px;
+        }
+      }
+
+      /* We want these invisible - they're only meant for screen readers */
+      nav label {
+        font-size: 0;
+        line-height: 0;
+      }
+
+      /* Acts as a spacer between the menu button and theme switcher */
+      @media only screen and (max-width: 869px) {
+        label[for='theme-switch'] {
+          flex: 1;
+        }
+      }
+
+      .theme-switch {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 46px;
+        height: 26px;
+        background: var(--highlight-color);
+        border-radius: 15px;
+        position: relative;
+        margin-left: 2px;
+        box-shadow: var(--inlay-shadow);
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .theme-switch:focus {
+        outline: none;
+      }
+      .theme-switch:focus-visible {
+        outline: var(--highlight-color) solid 2px;
+      }
+      .theme-switch:before {
+        content: '';
+        background: #fff;
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        transition: left var(--transition);
+        box-shadow: rgba(0,0,0,0.20) 0 2px 4px;
+      }
+      .theme-switch:checked:before {
+        left: calc(100% - 4px - 18px);
+      }
+
+      .theme-switch-container {
+          display: flex;
+          align-items: center;
+      }
+
+      .fa-moon-o {
+          margin-right: 8px;
+          margin-left: 15px;
+          color: var(--default-text-color);
+          transition: color var(--transition);
+      }
+
+      .tag {
+        font-size: 80%;
+        line-height: 1.1em;
+        padding: 6px 16px;
+        border-radius: var(--standard-border-radius);
+        vertical-align: text-top;
+        display: inline-block;
+        white-space: nowrap;
+        font-weight: 400;
+        background-color: var(--tag-background-color);
+        color: var(--tag-text-color);
+        transition: background-color var(--transition), color var(--transition);
+      }
+
+      blockquote {
+        line-height: 1.56em;
+        color: var(--emphasis-text-color);
+      }
+      @media only screen and (max-width: 869px) {
+        blockquote {
+          font-size: 20px;
+          margin: 16px 0 0;
+        }
+      }
+      @media only screen and (max-width: 1077px) {
+        blockquote br {
+          display: none;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        blockquote {
+          font-size: 32px;
+          margin: 20px 0 0;
+        }
+      }
+      blockquote .emoji {
+        font-size: 68%;
+      }
+
+      h2 {
+        font-size: 80%;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--subtle-text-color);
+      }
+      @media only screen and (max-width: 869px) {
+        h2 {
+          margin-bottom: 15px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        h2 {
+          margin-bottom: 25px;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      @media only screen and (min-width: 870px) {
+        .experience {
+          margin-bottom: calc(var(--section-spacing) - 40px);
+        }
+      }
+
+      .org-logo {
+        width: var(--org-logo-size);
+        height: var(--org-logo-size);
+        position: relative;
+        border: solid 1px var(--org-logo-border-color);
+        border-radius: var(--standard-border-radius);
+        margin-right: var(--org-logo-right-margin);
+        box-shadow: 0 2px 0 0 var(--org-logo-border-color);
+        background: var(--org-logo-background-color);
+        flex-shrink: 0;
+        transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
+      }
+      :root .org-logo-light, :root[data-theme-override='light'] .org-logo-light {
+        opacity: 1;
+      }
+      :root .org-logo-light, :root[data-theme-override='light'] .org-logo-dark {
+        opacity: 0;
+      }
+      :root[data-theme-override='dark'] .org-logo-light {
+        opacity: 0;
+      }
+      :root[data-theme-override='dark'] .org-logo-dark {
+        opacity: 1;
+      }
+      .org-logo img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity var(--transition);
+      }
+
+      .role {
+        position: relative;
+      }
+      @media only screen and (max-width: 869px) {
+        .role:not(:last-child) {
+          padding-bottom: 32px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        .role:not(:last-child) {
+          padding-bottom: 64px;
+        }
+        .role:not(:last-child):before {
+          content: '';
+          position: absolute;
+          left: calc(var(--org-logo-size) / 2.0);
+          top: 0;
+          bottom: 0;
+          border-left: solid 1px var(--org-logo-border-color);
+          z-index: -1;
+          transition: border-color var(--transition);
+        }
+      }
+
+      .role-header {
+        display: flex;
+        align-items: center;
+      }
+      @media only screen and (max-width: 869px) {
+        .role-header {
+          margin-bottom: 25px;
+        }
+      }
+      @media only screen and (min-width: 870px) {
+        .role-header {
+          margin-bottom: 20px;
+        }
+      }
+
+      .role-title {
+        padding-top: 1px;
+        font-weight: 500;
+        color: var(--emphasis-text-color);
+        transition: color var(--transition);
+      }
+
+      @media only screen and (min-width: 870px) {
+        .role-key-points {
+          padding-left: calc(var(--org-logo-size) + var(--org-logo-right-margin));
+        }
+      }
+
+      .role-key-points li {
+        margin-bottom: 10px;
+      }
+      .role-tenure {
+        font-size: 70%;
+        text-transform: uppercase;
+        color: var(--subtle-text-color);
+        padding-top: 4px;
+      }
+    </style>
+    <script>
+      // ------------------------------------------------------------------------------------------
+      //  Theme switching
+      // ------------------------------------------------------------------------------------------
+      const THEME_LOCAL_STORAGE_KEY = 'vijankush.netlify.app_theme';
+      const THEME_INPUT_SELECTOR = 'input[name="dark-theme"]';
+      const THEMES = {
+        LIGHT: 'light',
+        DARK: 'dark',
+      };
+
+      function detectTheme() {
+        const storedPreference = localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
+        const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.DARK : THEMES.LIGHT;
+        return storedPreference || systemPreference;
+      }
+
+      function applyTheme() {
+        const themeName = detectTheme();
+
+        document.documentElement.setAttribute('data-theme-override', themeName);
+        document.querySelector(THEME_INPUT_SELECTOR).checked = themeName === THEMES.DARK;
+      }
+
+      // Store the given theme as the user's preference in local storage
+      function storeThemePreference(themeName) {
+        localStorage.setItem(THEME_LOCAL_STORAGE_KEY, themeName);
+      }
+
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        applyTheme();
+
+        const themeInput = document.querySelector(THEME_INPUT_SELECTOR);
+        themeInput.addEventListener('change', (e) => {
+          storeThemePreference(e.target.checked ? THEMES.DARK : THEMES.LIGHT);
+          applyTheme();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class='container'>
+        <header>
+            <div class='avatar-and-name-container'>
+                <div class='avatar-container'>
+                    <img src='assets/ankush.jpg' alt='Anshul Vij' class='avatar-image' />
+                </div>
+                <div>
+                    <h1>Anshul Vij</h1>
+                    <div class='subtitle'>Welcome to my website!</div>
+                </div>
+            </div>
+            <nav>
+                <label for='mobile-menu-switch'>Toggle menu</label>
+                <input id='mobile-menu-switch' type='checkbox' name='menu-open' class='mobile-menu-switch'>
+                <label for='theme-switch'>Toggle theme</label>
+                <div class="theme-switch-container">
+                    <i class="fa fa-moon-o" aria-hidden="true"></i>
+                    <input id='theme-switch' type='checkbox' name='dark-theme' class='theme-switch'>
+                </div>
+                <ul>
+                    <li><a target='_blank' href='https://www.linkedin.com/in/avij/' rel='noreferrer noopener nofollow'>LinkedIn</a></li>
+                    <li><a target='_blank' href='https://github.com/vijankush' rel='noreferrer noopener nofollow'>Github</a></li>
+                    <li><a target='_blank' href='mailto:vijankush@gmail.com'>Email</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <blockquote>
+                Software Development Engineer at Amazon 💻<br/>
+                Full-Stack, App Dev, and ML Enthusiast <br/>
+            </blockquote>
+        </section>
+        <section>
+        <h2>Education</h2>
+        <ul>
+          <li class='role'>
+            <div class='role-header'>
+              <a href='https://www.unc.edu/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/unc.png' alt='UNC' class='org-logo-light' />
+                <img src='assets/unc.png' alt='UNC' class='org-logo-dark' />
+              </a>
+              <div>
+                <div class='role-title'>University of North Carolina - Chapel Hill</div>
+                <div class='subtitle'>Bachelors in Computer Science and Economics</div>
+              </div>
+            </div>
+            <ul class='role-key-points'>
+              <li>Dean's List, Global Honors, Honors Carolina, AIESEC Global Entrepreneur, Covenant Scholar, Wood Scholar</li>
+              <li> 3.8 / 4.0 GPA </li>
+              <li class='role-tenure'>2022 - 2026</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://amazon.com' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/Amazon.jpg' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/Amazon.jpg' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Senior Software Development Engineer</div>
+                            <div class='subtitle'>Amazon</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Designed and implemented serverless cloud-based Asset Depreciation Service for AWS, achieving 200 TPS, enhancing efficiency by 30%, and reducing manual General Ledger interventions by 80%</li>
+                        <li>Implemented Agile methodologies to lead 3 junior engineers in architecting a full-stack, real-time UI and depreciation calculation engine, emphasizing modern engineering practices such as 100% unit test coverage and load testing</li>
+                        <li>Implemented a full CI/CD pipeline using AWS tools like Glue, AWS Batch, DynamoDb, Lambda, and S3, facilitating 10M+ fixed assets real-time event processing and service manageability</li>
+                        <li>Engaged in service ownership, collaborated with product, engineering and operations teams to optimize products, improve infrastructure, ensuring service scalability, resilience, and building reliable distributed systems</li>
+                        <li class='role-tenure'>Nov 2022 – Present</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://amazon.com' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/Amazon.jpg' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/Amazon.jpg' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Software Development Engineer</div>
+                            <div class='subtitle'>Amazon</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Led automation in migrating 1B+ assets emphasizing large-scale data integration using cloud tools like Kinesis streaming, Lambda ETLs, DynamoDb and PostgreSQL, ensuring 100% accuracy and enterprise-scale reliability</li>
+                        <li>Awarded for Operational Excellence after leading continuous improvement initiatives, and standardizing service health dashboards using CloudWatch, achieving a 40% reduction in troubleshooting time</li>
+                        <li>Actively participated in code reviews, refactoring, and maintained build/deployment pipelines, adhering to best practices like Test-Driven Development and Continuous Deployment</li>
+                        <li class='role-tenure'>Jun 2021 – Nov 2022</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://m.facebook.com/vectorrideshare/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/Vector.png' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/Vector.png' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Front End Engineer</div>
+                            <div class='subtitle'>Vector Rideshare</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Designed responsive web applications on GCP Google Cloud Platform using Bootstrap, HTML/CSS/JS, PHP, MySQL</li>
+                        <li>Optimized web stack deployment by 35%, decreased server costs by 85% and helped lead 1K+ downloads</li>
+                        <li>Collaborated on app design and UX, using Asana, Adobe XD, Figma for innovation and efficient project management</li>
+                        <li class='role-tenure'>Apr 2020 – Jun 2021</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://ibm.com' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/ibm.jpg' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/ibm.jpg' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Software Engineer Co-Op</div>
+                            <div class='subtitle'>IBM</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Supported and debugged over 1,300 CICS regions across multiple LPARs, ensuring resilient, scalable service designs</li>
+                        <li>Demonstrated technical depth in cloud platforms by collaborating with a 150+ cross-functional team to streamline data and translate functional to business requirements</li>
+                        <li>Drove automation to improve service health and manageability, leading to efficient data consolidation from tables, VSAM and flat files, and crafted enhanced online screens via CICS</li>
+                        <li class='role-tenure'>Jun 2020 – Dec 2020</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://www.linkedin.com/company/tweecare/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/TweeCare.jpeg' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/TweeCare.jpeg' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Machine Learning Engineer</div>
+                            <div class='subtitle'>TweeCare</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Collaborated on a mental health app, integrating advanced machine learning LLMs to analyze Twitter behaviors</li>
+                        <li>Utilized Swift, C#, Java, Scala, and Python to develop a responsive application that employed natural language processing, Azure's ML capabilities, and a custom-built LLM to identify and flag negative tweets in a feed view</li>
+                        <li>Partnered with UX/Product Designers, leveraging Figma for web designs, incorporating user feedback and modern design principles, leading to a 25% increase in customer retention</li>
+                        <li class='role-tenure'>Jun 2020 – Dec 2020</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://home.paynearme.com/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/PayNearMe.png' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/PayNearMe.png' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Security Engineer</div>
+                            <div class='subtitle'>PayNearMe</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Developed a Real-Time Threat Detection application on a AWS VPC, achieving <1 ms latency to proactively detect and mitigate DDOS attacks on a PCI-compliant payment platform, ensuring resilient and scalable service designs</li>
+                        <li>Leveraged modern engineering practices with AWS tools to enhance security and real-time response capabilities</li>
+                        <li>Integrated Slack API and analytical tools for real-time notifications, optimizing service health and manageability</li>
+                        <li class='role-tenure'>Jan 2020 – May 2020</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Projects & Extracurriculars</h2>
+            <ul>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://www.launchchapelhill.com/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/launch_ch.png' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/launch_ch.png' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Startup Accelerator Summer Cohort</div>
+                            <div class='subtitle'>Launch Chapel Hill</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Co-Founder of Yummy Fleet - an on-campus food ordering and delivery app designed to make student dining experience more flexible</li>
+                        <li>Leveraged Adobe XD, Case Model Design, Java, Notion, Swift. Tech design planning, weekly scrum meetings, and mobile and web app development</li>
+                        <li>Conducted market analysis to target an average of 40% of college students that skip 4-6 meals each week</li>
+                        <li>Facilitated product delivery management, agile sprint planning, backlog grooming & app development on XCode & Swift</li>
+                        <br>
+                        <li><i>Launch Chapel Hill is a business accelerator and venture lab located in downtown Chapel Hill, NC. Launch is a partnership between UNC Chapel-Hill, Orange County and the Downtown Partnership dedicated to growing and nurturing the Chapel Hill startup community.</i></li>
+                        <li><a href="https://www.launchchapelhill.com/news-1/2020/5/26/launch-chapel-hill-welcomes-its-summer-cohort-of-unc-student-led-ventures-into-its-startup-accelerator" target='_blank' rel='noreferrer noopener nofollow'>Article Link 🔗</a></li>
+                        <li class='role-tenure'>Jun 2020 - Aug 2020</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://aiesec.org/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/aiesec.png' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/aiesec.png' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Web Developer and Digital Marketing Intern</div>
+                            <div class='subtitle'>AIESEC</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Developed optimized landing pages in HTML5/CSS/WordPress and implement servers and PHP MySQL database for domain hosting and website functionality</li>
+                        <li>Managed social media marketing via SEO techniques that increased daily traffic by 30%.</li>
+                        <br>
+                        <li><i>LPresent in over 127 countries with over 40,000 members, AIESEC is the world's largest youth-run organization. Startup Unicorns Project is a global 6-8 weeks professional internships for internationals in Egypt's top startups to support United Nations Sustainable Development Goals.</i></li>
+                        <li><a href="https://vijankush.github.io/Sophomore-Internship/" target='_blank' rel='noreferrer noopener nofollow'>Website Link 🔗</a></li>
+                        <li class='role-tenure'>May 2019 - Jul 2019</li>
+                    </ul>
+                </li>
+                <li class='role'>
+                    <div class='role-header'>
+                      <a href='https://www.launchlocal.org/' target='_blank' rel='noreferrer noopener nofollow' class='org-logo'>
+                <img src='assets/launch_local.jpeg' alt='Reworkd' class='org-logo-light' />
+                <img src='assets/launch_local.jpeg' alt='Reworkd' class='org-logo-dark' />
+              </a>
+                        <div>
+                            <div class='role-title'>Project Manager and Advisor</div>
+                            <div class='subtitle'>Launch Local</div>
+                        </div>
+                    </div>
+                    <ul class='role-key-points'>
+                        <li>Developed optimized landing pages in HTML5/CSS/WordPress and implement servers and PHP MySQL database for domain hosting and website functionality</li>
+                        <li>Managed social media marketing via SEO techniques that increased daily traffic by 30%.</li>
+                        <br>
+                        <li><i>LPresent in over 127 countries with over 40,000 members, AIESEC is the world's largest youth-run organization. Startup Unicorns Project is a global 6-8 weeks professional internships for internationals in Egypt's top startups to support United Nations Sustainable Development Goals.</i></li>
+                        <li><a href="https://www.launchlocal.org/blog/launch-local-at-work-timberland-espresso" target='_blank' rel='noreferrer noopener nofollow'>Article Link 🔗</a></li>
+                        <li class='role-tenure'>Jan 2020 - Jun 2021</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
