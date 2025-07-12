@@ -1137,7 +1137,7 @@
           <img src="assets/ankush.jpg" alt="Ankush Vij" class="profile-image">
           <div class="profile-details">
             <h2 class="profile-name">Ankush Vij</h2>
-            <p class="profile-title">Senior SDE @ Microsoft</p>
+            <p class="profile-title">Senior Software Engineer @ Microsoft</p>
             
             <div class="profile-links">
               <a href="https://www.linkedin.com/in/avij/" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
@@ -1160,8 +1160,20 @@
       <div class="timeline">
         <div class="timeline-item animate">
           <div class="timeline-content">
+            <img src="assets/microsoft.jpg" alt="Microsoft" class="timeline-logo">
+            <div class="timeline-date">May 2024 – Present</div>
+            <h3 class="timeline-title">Senior Software Engineer</h3>
+            <p class="timeline-company">Microsoft</p>
+            <div class="timeline-description">
+              <p>Drive the development of scalable solutions for calculating and processing 1.5B+ monthly royalty transactions across 9M products. Commerce + Ecosystems, Cloud & AI.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item animate">
+          <div class="timeline-content">
             <img src="assets/Amazon.jpg" alt="Amazon" class="timeline-logo">
-            <div class="timeline-date">Nov 2022 – Present</div>
+            <div class="timeline-date">Nov 2022 – May 2024</div>
             <h3 class="timeline-title">Senior Software Development Engineer</h3>
             <p class="timeline-company">Amazon</p>
             <div class="timeline-description">
@@ -1249,7 +1261,7 @@
       <div class="projects-grid">
         <div class="project-card animate">
           <div class="project-image">
-            <img src="assets/launch_ch.png" alt="Launch Chapel Hill">
+            <img src="assets/topics/launch_ch.png" alt="Launch Chapel Hill">
           </div>
           <div class="project-content">
             <h3 class="project-title">Yummy Fleet - Food Delivery App</h3>
@@ -1478,7 +1490,12 @@
         </div>
         
         <div class="contact-form animate delay-1">
-          <form action="#" method="POST" id="contact-form">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+            
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" class="form-control" required>
@@ -1629,24 +1646,42 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     
-    // Handle form submission
+    // Handle form submission with Netlify Forms integration
     const contactForm = document.getElementById('contact-form');
     
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      // In a real implementation, you would send the form data to a server or email service
       
-      // Simple form validation
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+      // Simple validation
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
       
-      if (name && email && message) {
-        alert("Thanks for your message! I'll get back to you soon.");
-        contactForm.reset();
-      } else {
-        alert("Please fill in all fields.");
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields.');
+        return;
       }
+      
+      // Submit to Netlify
+      const formData = new FormData(contactForm);
+      
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Thanks for your message! I'll get back to you soon.");
+          contactForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("There was an error submitting the form. Please try again.");
+      });
     });
     
     // Animate elements when they come into view
