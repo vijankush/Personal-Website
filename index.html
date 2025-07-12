@@ -1083,6 +1083,33 @@
         flex-direction: column;
       }
     }
+
+    /* New styles for form enhancements */
+    #form-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      text-align: center;
+      display: none; /* Hidden by default */
+    }
+
+    #form-message.success {
+      background-color: var(--success);
+      color: var(--white);
+      display: block;
+    }
+
+    #form-message.error {
+      background-color: var(--danger);
+      color: var(--white);
+      display: block;
+    }
+
+    .btn-primary:disabled {
+      background-color: var(--gray);
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
@@ -1261,7 +1288,7 @@
       <div class="projects-grid">
         <div class="project-card animate">
           <div class="project-image">
-            <img src="assets/topics/launch_ch.png" alt="Launch Chapel Hill">
+            <img src="assets/launch_ch.png" alt="Launch Chapel Hill">
           </div>
           <div class="project-content">
             <h3 class="project-title">Yummy Fleet - Food Delivery App</h3>
@@ -1490,7 +1517,7 @@
         </div>
         
         <div class="contact-form animate delay-1">
-          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+          <form name="contact" netlify method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" id="contact-form">
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -1498,25 +1525,26 @@
             
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" class="form-control" required>
+              <input type="text" id="name" name="name" class="form-control" required aria-required="true">
             </div>
             
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" required>
+              <input type="email" id="email" name="email" class="form-control" required aria-required="true">
             </div>
             
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-control" required>
+              <input type="text" id="subject" name="subject" class="form-control" required aria-required="true">
             </div>
             
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
+              <textarea id="message" name="message" class="form-control" required aria-required="true"></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+            <div id="form-message" role="alert"></div>
           </form>
         </div>
       </div>
@@ -1646,24 +1674,31 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     
-    // Handle form submission with Netlify Forms integration
+    // Enhanced form submission handler
     const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formMessage = document.getElementById('form-message');
     
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Simple validation
+      // Client-side validation
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
       
       if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields.');
+        showMessage('Please fill in all fields.', 'error');
         return;
       }
       
-      // Submit to Netlify
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      showMessage('', ''); // Clear previous messages
+      
+      // Submit via AJAX
       const formData = new FormData(contactForm);
       
       fetch('/', {
@@ -1672,18 +1707,29 @@
       })
       .then(response => {
         if (response.ok) {
-          alert("Thanks for your message! I'll get back to you soon.");
+          showMessage('Thanks for your message! I\'ll get back to you soon.', 'success');
           contactForm.reset();
         } else {
-          throw new Error('Form submission failed');
+          throw new Error('Form submission failed. Please try again.');
         }
       })
       .catch(error => {
         console.error(error);
-        alert("There was an error submitting the form. Please try again.");
+        showMessage('There was an error submitting the form. Please try again.', 'error');
+      })
+      .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
       });
     });
     
+    // Helper function to show messages
+    function showMessage(text, type) {
+      formMessage.textContent = text;
+      formMessage.className = type; // Applies 'success' or 'error' class
+    }
+
     // Animate elements when they come into view
     const observeElements = document.querySelectorAll('.animate');
     
